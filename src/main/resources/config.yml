@@ -6,5 +6,3 @@ verification:
   sheep-display-time: 60
   # 验证超时时间（单位：秒）
   timeout: 30
-  # 玩家加入消息
-  join-message: "§a欢迎 §e%player% §a加入游戏！"
