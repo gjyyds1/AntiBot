@@ -4,3 +4,4 @@ main: top.gjcraft.antiBot.AntiBot
 api-version: '1.21'
 authors: [ gjyyds1 ]
 description: 别样的新型反假人插件
+depend: [ ProtocolLib ]

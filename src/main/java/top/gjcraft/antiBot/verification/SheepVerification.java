@@ -12,6 +12,7 @@ import org.bukkit.plugin.Plugin;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Random;
 
 public class SheepVerification {
@@ -33,7 +34,7 @@ public class SheepVerification {
 
         // 生成羊并设置属性
         Location sheepLocation = location.clone();
-        Sheep sheep = sheepLocation.getWorld().spawn(sheepLocation, Sheep.class);
+        Sheep sheep = Objects.requireNonNull(sheepLocation.getWorld()).spawn(sheepLocation, Sheep.class);
         sheep.setAI(false); // 禁用AI防止移动
         sheep.setGravity(false); // 禁用重力防止掉落
         sheep.setColor(randomColor);
@@ -59,7 +60,9 @@ public class SheepVerification {
         for (DyeColor color : DyeColor.values()) {
             ItemStack wool = new ItemStack(Material.valueOf(color.name() + "_WOOL"));
             ItemMeta meta = wool.getItemMeta();
-            meta.setDisplayName(getColorName(color));
+            if (meta != null) {
+                meta.setDisplayName(getColorName(color));
+            }
             wool.setItemMeta(meta);
             gui.setItem(slot++, wool);
         }
