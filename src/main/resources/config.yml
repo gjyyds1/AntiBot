@@ -1,0 +1,8 @@
+# AntiBot 配置文件
+
+# 验证设置
+verification:
+  # 羊显示时间（单位：tick，20 tick = 1秒）
+  sheep-display-time: 60
+  # 彩虹羊出现概率（0.0-1.0）
+  rainbow-sheep-chance: 0.1
